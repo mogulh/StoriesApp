@@ -5,4 +5,8 @@
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="_123">123</string>
     <string name="username">username</string>
+    <string name="bio">my name is mogulh I do a lot of stuff alone</string>
+    <string name="website">Website</string>
+    <string name="phone">Phone</string>
+    <string name="digits">+254 712345678</string>
 </resources>
