@@ -22,8 +22,8 @@
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginRight="100dp"
                 android:src="@drawable/storieslogo" />
 
             <ImageView
@@ -35,14 +35,6 @@
                 android:layout_marginEnd="20dp"
                 android:id="@+id/search_btn"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_download"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginEnd="20dp"
-                android:id="@+id/download_btn"/>
 
 
             <ImageView
@@ -93,8 +85,8 @@
         <ImageView
             android:layout_width="35dp"
             android:layout_height="40dp"
-            android:src="@drawable/download"
-            android:id="@+id/post_dwnld_btn"
+            android:src="@drawable/ic_seen"
+            android:id="@+id/post_seen_btn"
             />
         <ImageView
             android:layout_width="40dp"
@@ -133,7 +125,7 @@
             android:textColor="@color/black"
             android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:id="@+id/download_count"/>
+            android:id="@+id/seen_count"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="match_parent"
