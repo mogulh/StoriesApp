@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "411590265931",
+    "firebase_url": "https://stories-5293.firebaseio.com",
+    "project_id": "stories-5293",
+    "storage_bucket": "stories-5293.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411590265931:android:30f24cbaf2fdb44cc891ce",
+        "android_client_info": {
+          "package_name": "com.mogulh.stories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411590265931-flt2prcchb4gkjtn8irfjce9pkggojro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mogulh.stories",
+            "certificate_hash": "85739617d447ff736ef9a5fb15bddcb0affd7392"
+          }
+        },
+        {
+          "client_id": "411590265931-fi7vafj3fgkqcu0gsmivrhvvn96i8m3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANS7t4nkY0C_agztEPl9VxtV0f92ws7vM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411590265931-fi7vafj3fgkqcu0gsmivrhvvn96i8m3g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

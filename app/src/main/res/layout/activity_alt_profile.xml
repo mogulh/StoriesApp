@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:id="@+id/appbar"
-        android:background="white">
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -212,7 +212,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bio"
-                    android:textColor="@color/grey"/>
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -254,7 +254,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/website"
-                    android:textColor="@color/grey"/>
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -290,15 +290,17 @@
             android:id="@+id/btn_stories"
             >
             <Button
-                android:layout_width="200dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:id="@+id/live_btn"
                 android:text="live"
                 android:layout_gravity="center"
                 />
             <Button
-                android:layout_width="200dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:id="@+id/archive_btn"
                 android:text="archive"
                 android:layout_gravity="center"
