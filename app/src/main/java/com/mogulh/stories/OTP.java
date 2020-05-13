@@ -61,8 +61,10 @@ public class OTP extends AppCompatActivity {
 
 
     private void verifyCode(String code){
+        Toast.makeText(OTP.this, "Verifying...", Toast.LENGTH_SHORT).show();
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
         signInWithCredential(credential);
+
 
 
     }
@@ -74,12 +76,16 @@ public class OTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
+                            Toast.makeText(OTP.this, "Verified...", Toast.LENGTH_SHORT).show();
+
                             Intent intent = new Intent(OTP.this, Profile.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
 
                         }else {
                             Toast.makeText(OTP.this, task.getException()
                                     .getMessage(), Toast.LENGTH_LONG).show();
+
                         }
 
                     }
@@ -92,8 +98,7 @@ public class OTP extends AppCompatActivity {
                 60,
                 TimeUnit.SECONDS,
                 TaskExecutors.MAIN_THREAD,
-                mCallBack
-        );
+                mCallBack);
     }
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
@@ -109,6 +114,7 @@ public class OTP extends AppCompatActivity {
             String code = phoneAuthCredential.getSmsCode();
             if (code != null){
                 verifyCode(code);
+                editText.setText(code);
             }
 
         }
