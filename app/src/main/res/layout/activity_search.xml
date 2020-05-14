@@ -8,6 +8,8 @@
 
 
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +23,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_arrow"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:id="@+id/back"/>
 
     <EditText
         android:layout_width="330dp"
@@ -34,51 +37,33 @@
             android:src="@drawable/ic_search"/>
     </LinearLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/search_bar"
+        android:id="@+id/fragment_container"/>
 
- <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_below="@+id/search_bar"
-     android:layout_margin="5dp"
-     android:orientation="horizontal"
-     android:id="@+id/buttons"
-     android:gravity="center">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom">
 
-     <Button
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="blazing"
-         android:textAllCaps="false"
-         android:id="@+id/blazing_btn"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_nav"
+            android:background="@color/white"
+            app:labelVisibilityMode="unlabeled"
+            app:itemIconTint="@color/selector"
+            android:id="@+id/bottom_nav"
+            />
 
-     <Button
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="places"
-         android:textAllCaps="false"
-         android:id="@+id/places_btn"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
-     <Button
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:text="people"
-     android:textAllCaps="false"
-         android:id="@+id/people_btn"/>
 
-     <Button
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="tags"
-         android:textAllCaps="false"
-         android:id="@+id/tags_btn"/>
 
- </LinearLayout>
-
-  <androidx.recyclerview.widget.RecyclerView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_below="@id/buttons"
-      android:id="@+id/search_recycler"/>
 
 
 

@@ -25,7 +25,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="210dp"
             android:src="@drawable/profile_logo"
-            android:layout_marginEnd="220dp" />
+            android:layout_marginEnd="180dp" />
 
 
 
@@ -38,6 +38,14 @@
             android:src="@drawable/ic_home"
             android:layout_marginEnd="2dp"
             android:id="@+id/home_btn"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="2dp"
+            android:src="@drawable/ic_edit"
+            android:layout_marginEnd="2dp"
+            android:id="@+id/edit_btn"/>
 
 
     </LinearLayout>
@@ -159,192 +167,55 @@
 
         </RelativeLayout>
 
+
+
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:id="@+id/stories">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:orientation="horizontal"
-                android:gravity="center"
-                android:id="@+id/name_edit"
+                android:id="@+id/btn_stories"
                 >
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_profile"
-                    android:layout_marginRight="20dp"/>
-
-
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/username"
-                        android:textColor="@color/black"/>
-
-
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_edit" />
-
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/live_btn"
+                    android:text="live"
+                    android:layout_gravity="center"
+                    />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/archive_btn"
+                    android:text="archive"
+                    android:layout_gravity="center"
+                    />
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_below="@id/name_edit"
-                android:layout_marginTop="20dp"
-                android:id="@+id/bio_edit"
-                >
+                android:layout_below="@+id/btn_stories"
+                android:layout_marginTop="5dp"
+                android:id="@+id/live_stories"/>
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_bio"
-                    android:layout_marginRight="20dp"/>
-
-
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bio" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/bio"
-                        android:textColor="@color/black"
-                        android:lines="2"/>
-
-
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_edit"/>
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_below="@id/bio_edit"
-                android:layout_marginTop="20dp"
-                android:id="@+id/website_edit"
-                >
+                android:layout_below="@+id/btn_stories"
+                android:layout_marginTop="5dp"
+                android:id="@+id/archive_stories"
+                android:visibility="gone"/>
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_web"
-                    android:layout_marginRight="20dp"/>
-
-
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/website"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="www.mogulh.co.ke"
-                        android:textColor="@color/black"
-                        />
-
-
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_edit"/>
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_below="@id/website_edit"
-                android:layout_marginTop="20dp"
-                android:id="@+id/phone_edit"
-                >
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_phone"
-                    android:layout_marginRight="20dp"/>
-
-
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/phone"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/digits"
-                        android:textColor="@color/black"
-                        />
-
-
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_edit"/>
-
-
-            </LinearLayout>
 
         </RelativeLayout>
 

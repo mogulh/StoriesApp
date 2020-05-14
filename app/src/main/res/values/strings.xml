@@ -9,4 +9,15 @@
     <string name="website">Website</string>
     <string name="phone">Phone</string>
     <string name="digits">+254 712345678</string>
+    <string name="e_mail">myname@example.com</string>
+    <string name="register">register</string>
+    <string name="full_name">full name</string>
+    <string name="password">********</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="blazing">blazing</string>
+    <string name="users">Users</string>
+    <string name="places">places</string>
+    <string name="tags">tags</string>
 </resources>

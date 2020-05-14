@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_blaze"
+        android:icon="@drawable/ic_inferno"
+        android:title=""/>
+    <item
+        android:id="@+id/nav_users"
+        android:icon="@drawable/ic_contacts"
+        android:title=""/>
+    <item
+        android:id="@+id/nav_places"
+        android:icon="@drawable/ic_place"
+        android:title=""/>
+    <item
+        android:id="@+id/nav_tags"
+        android:icon="@drawable/ic_tags"
+        android:title=""/>
+
+
+</menu>

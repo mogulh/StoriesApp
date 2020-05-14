@@ -16,9 +16,13 @@ import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 public class OTP extends AppCompatActivity {
@@ -26,6 +30,8 @@ public class OTP extends AppCompatActivity {
     private EditText editText;
     private String verificationId;
     private FirebaseAuth mAuth;
+
+    DatabaseReference reference;
 
 
     @Override
@@ -74,20 +80,43 @@ public class OTP extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
-                            Toast.makeText(OTP.this, "Verified...", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(OTP.this, Profile.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
+                            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                            String userID = firebaseUser.getUid();
+                            String phone = getIntent().getStringExtra("phonenumber");
 
-                        }else {
-                            Toast.makeText(OTP.this, task.getException()
-                                    .getMessage(), Toast.LENGTH_LONG).show();
+                            reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID);
+                            HashMap<String, Object> map = new HashMap<>();
+                            map.put("id", userID);
+                            map.put("username", "");
+                            map.put("fullname", "");
+                            map.put("imageurl", "https://firebasestorage.googleapis.com/v0/b/instagramtest-fcbef.appspot.com/o/placeholder.png?alt=media&token=b09b809d-a5f8-499b-9563-5252262e9a49");
+                            map.put("bio", "");
+                            map.put("website", "");
+                            map.put("phone", phone);
 
+                            reference.setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Intent intent = new Intent(OTP.this, Home.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent);
+
+                                        Toast.makeText(OTP.this, "Verified...", Toast.LENGTH_SHORT).show();
+
+
+                                    } else {
+                                        Toast.makeText(OTP.this, task.getException()
+                                                .getMessage(), Toast.LENGTH_LONG).show();
+
+                                    }
+
+                                }
+                            });
                         }
-
                     }
                 });
     }
@@ -125,4 +154,6 @@ public class OTP extends AppCompatActivity {
 
         }
     };
+
+
 }
