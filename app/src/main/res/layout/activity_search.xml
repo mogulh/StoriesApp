@@ -29,6 +29,7 @@
     <EditText
         android:layout_width="330dp"
         android:layout_height="wrap_content"
+        android:id="@+id/search_bar_txt"
         />
 
         <ImageView

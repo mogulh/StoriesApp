@@ -82,7 +82,12 @@ public class OTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
+                            if (FirebaseDatabase.getInstance().getReference().child("Users").getKey() != null) {
+                                Intent intent = new Intent(OTP.this, Home.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
+                                startActivity(intent);
+                            }
                             FirebaseUser firebaseUser = mAuth.getCurrentUser();
                             String userID = firebaseUser.getUid();
                             String phone = getIntent().getStringExtra("phonenumber");
@@ -92,7 +97,7 @@ public class OTP extends AppCompatActivity {
                             map.put("id", userID);
                             map.put("username", "");
                             map.put("fullname", "");
-                            map.put("imageurl", "https://firebasestorage.googleapis.com/v0/b/instagramtest-fcbef.appspot.com/o/placeholder.png?alt=media&token=b09b809d-a5f8-499b-9563-5252262e9a49");
+                            map.put("imageurl", "gs://stories-5293.appspot.com/icons8-customer-100.png");
                             map.put("bio", "");
                             map.put("website", "");
                             map.put("phone", phone);
